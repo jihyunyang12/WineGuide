@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30330.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WineGuide", "WineGuide\WineGuide.csproj", "{6ED4F0FB-6722-46ED-9E04-A68F89364372}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WineGuide", "WineGuide\WineGuide.csproj", "{6ED4F0FB-6722-46ED-9E04-A68F89364372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WineProvider", "WineProvider\WineProvider.csproj", "{90694F2F-3A68-4AA1-B34A-9D473B59E21E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6ED4F0FB-6722-46ED-9E04-A68F89364372}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED4F0FB-6722-46ED-9E04-A68F89364372}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ED4F0FB-6722-46ED-9E04-A68F89364372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90694F2F-3A68-4AA1-B34A-9D473B59E21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90694F2F-3A68-4AA1-B34A-9D473B59E21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90694F2F-3A68-4AA1-B34A-9D473B59E21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90694F2F-3A68-4AA1-B34A-9D473B59E21E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

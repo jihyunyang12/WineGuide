@@ -1,0 +1,9 @@
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\bin\Debug\netstandard2.0\WineProvider.deps.json
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\bin\Debug\netstandard2.0\WineProvider.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\bin\Debug\netstandard2.0\WineProvider.pdb
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\obj\Debug\netstandard2.0\WineProvider.csprojAssemblyReference.cache
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\obj\Debug\netstandard2.0\WineProvider.AssemblyInfoInputs.cache
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\obj\Debug\netstandard2.0\WineProvider.AssemblyInfo.cs
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\obj\Debug\netstandard2.0\WineProvider.csproj.CoreCompileInputs.cache
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\obj\Debug\netstandard2.0\WineProvider.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineProvider\obj\Debug\netstandard2.0\WineProvider.pdb

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "WineProvider/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/WineProvider.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WineProvider.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "WineProvider/1.0.0": {
+      "type": "project",
+      "path": "../WineProvider/WineProvider.csproj",
+      "msbuildProject": "../WineProvider/WineProvider.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "WineProvider >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\JYang\\.nuget\\packages\\": {},
@@ -37,7 +56,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\JYang\\source\\JihyunRepos\\WineGuide\\WineProvider\\WineProvider.csproj": {
+              "projectPath": "C:\\Users\\JYang\\source\\JihyunRepos\\WineGuide\\WineProvider\\WineProvider.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
