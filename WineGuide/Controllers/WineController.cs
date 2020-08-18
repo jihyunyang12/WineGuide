@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WineProvider;
 using WineProvider.Models;
@@ -15,7 +16,15 @@ namespace WineGuide.Controllers
     [ApiController]
     public class WineController : ControllerBase
     {
+        //private readonly WineItemsProvider _wineItemsProvider;
+
+        //public WineController(WineItemsProvider wineItemsProvider)
+        //{
+        //    _wineItemsProvider = wineItemsProvider;
+        //}
+        
         // GET: api/<WineController>
+        
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -48,6 +57,7 @@ namespace WineGuide.Controllers
         }
 
         // api/Wine/wine
+        [EnableCors("Policy1")]
         [HttpGet("wine")]
         public List<WineDataModel> GetWines()
         {

@@ -12,10 +12,10 @@ namespace WineProvider.Models
         public string Name { get; set; }
         [DataMember]
         public string Color { get; set; }
-        [DataMember]
-        public List<string> Taste { get; set; }
-        [DataMember]
-        public List<string> FoodPairing { get; set; }
+        //[DataMember]
+        //public List<string> Taste { get; set; }
+        //[DataMember]
+        //public List<string> FoodPairing { get; set; }
     }
 }
 

@@ -6,10 +6,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WineProvider.Classes;
 
 namespace WineGuide
 {
@@ -28,27 +30,34 @@ namespace WineGuide
             services.AddControllers();
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials());
+
+                options.AddPolicy("Policy1",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
             });
+            services.AddDbContext<WineContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("WineConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCors("CorsPolicy");
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 
