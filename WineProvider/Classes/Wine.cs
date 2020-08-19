@@ -21,22 +21,22 @@ namespace WineProvider.Classes
             CreateWines();
         }
 
-        public void Add<WineDataModel>(WineDataModel wine)
+        public void Add(WineDataModel wine)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete<WineDataModel>(int id)
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public WineDataModel Get<WineDataModel>()
+        public WineDataModel Get()
         {
             throw new NotImplementedException();
         }
 
-        public List<WineDataModel> GetAll<WineDataModel>()
+        public List<WineDataModel> GetAll()
         {
             Console.WriteLine(_wineDataModels);
             return _wineDataModels as List<WineDataModel>;
@@ -44,39 +44,21 @@ namespace WineProvider.Classes
 
         private void CreateWines()
         {
-            //WineDataModel wineDataModelPinotNoir = new WineDataModel();
-            //wineDataModelPinotNoir.Name = "Pinot Noir";
-            //wineDataModelPinotNoir.Color = "Red";
-            ////wineDataModelPinotNoir.Taste = new List<string>() { "Cherry", "Cranberry", "Rose", "Rhubarb" };
-            ////wineDataModelPinotNoir.FoodPairing = new List<string>() { "Chicken", "Pork", "Duck", "Soft Cheese" };
-            //_wineDataModels.Add(wineDataModelPinotNoir);
+            WineDataModel wineDataModelPinotNoir = new WineDataModel();
+            wineDataModelPinotNoir.Id = 0;
+            wineDataModelPinotNoir.Name = "Pinot Noir";
+            wineDataModelPinotNoir.Color = "Red";
+            //wineDataModelPinotNoir.Taste = new List<string>() { "Cherry", "Cranberry", "Rose", "Rhubarb" };
+            //wineDataModelPinotNoir.FoodPairing = new List<string>() { "Chicken", "Pork", "Duck", "Soft Cheese" };
+            _wineDataModels.Add(wineDataModelPinotNoir);
 
-            //WineDataModel wineDataModelRiesling = new WineDataModel();
-            //wineDataModelRiesling.Name = "Riesling";
-            //wineDataModelRiesling.Color = "White";
-            ////wineDataModelRiesling.Taste = new List<string>() { "citrus", "nectarine", "floral" };
-            ////wineDataModelRiesling.FoodPairing = new List<string>() { "chicken", "pork", "duck", "indian", "thai", "vietnamese" };
-            //_wineDataModels.Add(wineDataModelRiesling);
-
-            var WineData = new WineDataModel();
-            {
-                //string _connectionString = ConfigurationManager.ConnectionStrings["DotaConnection"].ConnectionString;
-                string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
-                using SqlConnection con = new SqlConnection(_connectionString);
-                using var command = new SqlCommand("select * from winecellar", con);
-                con.Open();
-                DbDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    var WineModel = new WineDataModel
-                    {
-                        Name = reader.IsDBNull(reader.GetOrdinal("name")) ? "" : reader.GetString(reader.GetOrdinal("name")),
-                        Color = reader.IsDBNull(reader.GetOrdinal("color")) ? "" : reader.GetString(reader.GetOrdinal("color"))
-                    };
-                    _wineDataModels.Add(WineModel);
-                }
-            };
-
+            WineDataModel wineDataModelRiesling = new WineDataModel();
+            wineDataModelRiesling.Id = 1;
+            wineDataModelRiesling.Name = "Riesling";
+            wineDataModelRiesling.Color = "White";
+            //wineDataModelRiesling.Taste = new List<string>() { "citrus", "nectarine", "floral" };
+            //wineDataModelRiesling.FoodPairing = new List<string>() { "chicken", "pork", "duck", "indian", "thai", "vietnamese" };
+            _wineDataModels.Add(wineDataModelRiesling);
 
         }
 

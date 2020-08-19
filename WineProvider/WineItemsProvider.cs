@@ -8,25 +8,16 @@ namespace WineProvider
 {
     public class WineItemsProvider
     {
-        //private readonly SqlWineRepoEF _sqlWineRepoEF;
+        private readonly IWine _repository;
 
-        //public WineItemsProvider(SqlWineRepoEF sqlwinerepoef)
-        //{
-        //    _sqlWineRepoEF = sqlwinerepoef;
-        //}
-
-        //private readonly WineContext _wineContext;
-
-        //public WineItemsProvider(WineContext wineContext)
-        //{
-        //    _wineContext = wineContext;
-        //}
+        public WineItemsProvider(IWine repository)
+        {
+            _repository = repository;
+        }
 
         public List<WineDataModel> GetWines()
         {
-            //SqlWineRepoEF wine = new SqlWineRepoEF();
-            Wine wine = new Wine();
-            return wine.GetAll<WineDataModel>();
+            return _repository.GetAll();
         }
     }
 }

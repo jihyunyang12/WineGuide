@@ -16,15 +16,15 @@ namespace WineGuide.Controllers
     [ApiController]
     public class WineController : ControllerBase
     {
-        //private readonly WineItemsProvider _wineItemsProvider;
+        private readonly IWine _repository;
 
-        //public WineController(WineItemsProvider wineItemsProvider)
-        //{
-        //    _wineItemsProvider = wineItemsProvider;
-        //}
-        
+        public WineController(IWine repository)
+        {
+            _repository = repository;
+        }
+
         // GET: api/<WineController>
-        
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -61,7 +61,7 @@ namespace WineGuide.Controllers
         [HttpGet("wine")]
         public List<WineDataModel> GetWines()
         {
-            WineItemsProvider wineItemsProvider = new WineItemsProvider();
+            WineItemsProvider wineItemsProvider = new WineItemsProvider(_repository);
             return wineItemsProvider.GetWines();
         }
 

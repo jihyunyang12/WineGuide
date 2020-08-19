@@ -13,6 +13,6 @@ namespace WineProvider.Classes
 
         }
 
-        public DbSet<WineDataModel> WineDataModels { get; set; }
+        public DbSet<WineDataModel> WineCellar { get; set; }
     }
 }

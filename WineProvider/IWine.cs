@@ -6,9 +6,9 @@ namespace WineProvider
 {
     public interface IWine
     {
-        public List<WineDataModel> GetAll<WineDataModel>();
-        public WineDataModel Get<WineDataModel>();
-        public void Add<WineDataModel>(WineDataModel wine);
-        public void Delete<WineDataModel>(int id);
+        public List<WineDataModel> GetAll();
+        public WineDataModel Get();
+        public void Add(WineDataModel wine);
+        public void Delete(int id);
     }
 }

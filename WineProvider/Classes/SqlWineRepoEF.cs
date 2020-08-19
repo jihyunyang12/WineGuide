@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WineProvider.Classes;
+using WineProvider.Models;
 
-namespace WineProvider
+namespace WineProvider.Classes
 {
     public class SqlWineRepoEF: IWine
     {
@@ -15,23 +16,23 @@ namespace WineProvider
             _wineContext = wineContext;
         }
 
-        public List<WineDataModel> GetAll<WineDataModel>()
+        public List<WineDataModel> GetAll()
         {
-            Console.WriteLine(_wineContext.WineDataModels.ToList());
-            return _wineContext.WineDataModels.ToList() as List<WineDataModel>;
+            Console.WriteLine(_wineContext.WineCellar.ToList());
+            return _wineContext.WineCellar.ToList() as List<WineDataModel>;
         }
 
-        public WineDataModel Get<WineDataModel>()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Add<WineDataModel>(WineDataModel wine)
+        public WineDataModel Get()
         {
             throw new NotImplementedException();
         }
 
-        public void Delete<WineDataModel>(int id)
+        public void Add(WineDataModel wine)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }

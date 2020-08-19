@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WineProvider;
 using WineProvider.Classes;
 
 namespace WineGuide
@@ -39,14 +40,13 @@ namespace WineGuide
                                             .AllowAnyMethod();
                     });
             });
+            services.AddScoped<IWine, Wine>();
             services.AddDbContext<WineContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("WineConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-
-            
 
             if (env.IsDevelopment())
             {
