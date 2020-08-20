@@ -17,25 +17,27 @@ namespace WineGuide.Controllers
     public class WineController : ControllerBase
     {
         private readonly IWine _repository;
+        WineItemsProvider wineItemsProvider;
 
         public WineController(IWine repository)
         {
             _repository = repository;
+            wineItemsProvider = new WineItemsProvider(_repository);
         }
 
-        // GET: api/<WineController>
-
+        // api/Wine
+        [EnableCors("Policy1")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<WineDataModel> GetWines()
         {
-            return new string[] { "value1", "value2" };
+            return wineItemsProvider.GetWines();
         }
 
         // GET api/<WineController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public WineDataModel GetWineById(int id)
         {
-            return "value";
+            return wineItemsProvider.GetWineById(id);
         }
 
         // POST api/<WineController>
@@ -54,15 +56,6 @@ namespace WineGuide.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
-
-        // api/Wine/wine
-        [EnableCors("Policy1")]
-        [HttpGet("wine")]
-        public List<WineDataModel> GetWines()
-        {
-            WineItemsProvider wineItemsProvider = new WineItemsProvider(_repository);
-            return wineItemsProvider.GetWines();
         }
 
     }

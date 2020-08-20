@@ -31,15 +31,14 @@ namespace WineProvider.Classes
             throw new NotImplementedException();
         }
 
-        public WineDataModel Get()
+        public WineDataModel Get(int id)
         {
-            throw new NotImplementedException();
+            return _wineDataModels.Find(wine => wine.Id == id);
         }
 
         public List<WineDataModel> GetAll()
         {
-            Console.WriteLine(_wineDataModels);
-            return _wineDataModels as List<WineDataModel>;
+            return _wineDataModels;
         }
 
         private void CreateWines()

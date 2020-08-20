@@ -19,12 +19,12 @@ namespace WineProvider.Classes
         public List<WineDataModel> GetAll()
         {
             Console.WriteLine(_wineContext.WineCellar.ToList());
-            return _wineContext.WineCellar.ToList() as List<WineDataModel>;
+            return _wineContext.WineCellar.ToList();
         }
 
-        public WineDataModel Get()
+        public WineDataModel Get(int id)
         {
-            throw new NotImplementedException();
+            return _wineContext.WineCellar.Find(id);
         }
 
         public void Add(WineDataModel wine)

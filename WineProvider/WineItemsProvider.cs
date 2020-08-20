@@ -19,5 +19,10 @@ namespace WineProvider
         {
             return _repository.GetAll();
         }
+
+        public WineDataModel GetWineById(int id)
+        {
+            return _repository.Get(id);
+        }
     }
 }

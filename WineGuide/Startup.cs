@@ -40,7 +40,7 @@ namespace WineGuide
                                             .AllowAnyMethod();
                     });
             });
-            services.AddScoped<IWine, Wine>();
+            services.AddScoped<IWine, SqlWineRepoNonEF>();
             services.AddDbContext<WineContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("WineConnection")));
         }
 
