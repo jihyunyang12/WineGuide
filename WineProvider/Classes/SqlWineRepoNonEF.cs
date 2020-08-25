@@ -12,26 +12,38 @@ namespace WineProvider.Classes
     {
         public void Add(WineDataModel wine)
         {
-            throw new NotImplementedException();
+            string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
+            using SqlConnection con = new SqlConnection(_connectionString);
+            using var command = new SqlCommand("insert into winecellar values ( '" + wine.Name + "', '" + wine.Color + "')", con);
+            con.Open();
+            DbDataReader reader = command.ExecuteReader();
+            con.Close();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
+            using SqlConnection con = new SqlConnection(_connectionString);
+            using var command = new SqlCommand("delete from winecellar where ID = " + id, con);
+            con.Open();
+            DbDataReader reader = command.ExecuteReader();
+            con.Close();
         }
 
         public WineDataModel Get(int id)
         {
+            string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
+            using SqlConnection con = new SqlConnection(_connectionString);
+            using var command = new SqlCommand("select * from winecellar where ID = " + id, con);
+            con.Open();
+            DbDataReader reader = command.ExecuteReader();
+
             var WineData = new WineDataModel();
+
             {
-                string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
-                using SqlConnection con = new SqlConnection(_connectionString);
-                using var command = new SqlCommand("select * from winecellar where ID = " + id, con);
-                con.Open();
-                DbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    var Wine = new WineDataModel
+                    var Wine = new WineDataModel()
                     {
                         Id = reader.IsDBNull(reader.GetOrdinal("id")) ? 0 : reader.GetInt32(reader.GetOrdinal("id")),
                         Name = reader.IsDBNull(reader.GetOrdinal("name")) ? "" : reader.GetString(reader.GetOrdinal("name")),
@@ -40,18 +52,22 @@ namespace WineProvider.Classes
                     WineData = Wine;
                 }
             }
+
+            con.Close();
+
             return WineData;
         }
 
         public List<WineDataModel> GetAll()
         {
+            string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
+            using SqlConnection con = new SqlConnection(_connectionString);
+            using var command = new SqlCommand("select * from winecellar", con);
+            con.Open();
+            DbDataReader reader = command.ExecuteReader();
+
             var WineData = new List<WineDataModel>();
             {
-                string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
-                using SqlConnection con = new SqlConnection(_connectionString);
-                using var command = new SqlCommand("select * from winecellar", con);
-                con.Open();
-                DbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     var Wine = new WineDataModel
@@ -63,6 +79,8 @@ namespace WineProvider.Classes
                     WineData.Add(Wine);
                 }
             };
+
+            con.Close();
             return WineData;
         }
 

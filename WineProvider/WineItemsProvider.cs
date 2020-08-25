@@ -24,5 +24,16 @@ namespace WineProvider
         {
             return _repository.Get(id);
         }
+
+        public void AddWine(WineDataModel wine)
+        {
+            _repository.Add(wine);
+        }
+
+        public void DeleteWine(int id)
+        {
+            _repository.Delete(id);
+        }
+
     }
 }

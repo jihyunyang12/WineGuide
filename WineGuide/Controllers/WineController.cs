@@ -42,8 +42,10 @@ namespace WineGuide.Controllers
 
         // POST api/<WineController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<WineDataModel> AddWine(WineDataModel wineDataModel)
         {
+            wineItemsProvider.AddWine(wineDataModel);
+            return CreatedAtAction(nameof(GetWineById), new { id = wineDataModel.Id }, wineDataModel);
         }
 
         // PUT api/<WineController>/5
@@ -56,6 +58,7 @@ namespace WineGuide.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            wineItemsProvider.DeleteWine(id);
         }
 
     }
