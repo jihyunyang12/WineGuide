@@ -14,7 +14,7 @@ namespace WineProvider.Classes
         {
             string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
             using SqlConnection con = new SqlConnection(_connectionString);
-            using var command = new SqlCommand("insert into winecellar values ( '" + wine.Name + "', '" + wine.Color + "')", con);
+            using var command = new SqlCommand("insert into winecellar values ( '" + wine.Name + "', '" + wine.Color + "', '" + wine.Fruit + "', '" + wine.Body + "', '"  + wine.Tannin + "')", con);
             con.Open();
             DbDataReader reader = command.ExecuteReader();
             con.Close();
@@ -47,7 +47,10 @@ namespace WineProvider.Classes
                     {
                         Id = reader.IsDBNull(reader.GetOrdinal("id")) ? 0 : reader.GetInt32(reader.GetOrdinal("id")),
                         Name = reader.IsDBNull(reader.GetOrdinal("name")) ? "" : reader.GetString(reader.GetOrdinal("name")),
-                        Color = reader.IsDBNull(reader.GetOrdinal("color")) ? "" : reader.GetString(reader.GetOrdinal("color"))
+                        Color = reader.IsDBNull(reader.GetOrdinal("color")) ? "" : reader.GetString(reader.GetOrdinal("color")),
+                        Fruit = reader.IsDBNull(reader.GetOrdinal("fruit")) ? "" : reader.GetString(reader.GetOrdinal("fruit")),
+                        Body = reader.IsDBNull(reader.GetOrdinal("body")) ? "" : reader.GetString(reader.GetOrdinal("body")),
+                        Tannin = reader.IsDBNull(reader.GetOrdinal("tannin")) ? "" : reader.GetString(reader.GetOrdinal("tannin"))
                     };
                     WineData = Wine;
                 }
@@ -74,7 +77,10 @@ namespace WineProvider.Classes
                     {
                         Id = reader.IsDBNull(reader.GetOrdinal("id")) ? 0 : reader.GetInt32(reader.GetOrdinal("id")),
                         Name = reader.IsDBNull(reader.GetOrdinal("name")) ? "" : reader.GetString(reader.GetOrdinal("name")),
-                        Color = reader.IsDBNull(reader.GetOrdinal("color")) ? "" : reader.GetString(reader.GetOrdinal("color"))
+                        Color = reader.IsDBNull(reader.GetOrdinal("color")) ? "" : reader.GetString(reader.GetOrdinal("color")),
+                        Fruit = reader.IsDBNull(reader.GetOrdinal("fruit")) ? "" : reader.GetString(reader.GetOrdinal("fruit")),
+                        Body = reader.IsDBNull(reader.GetOrdinal("body")) ? "" : reader.GetString(reader.GetOrdinal("body")),
+                        Tannin = reader.IsDBNull(reader.GetOrdinal("tannin")) ? "" : reader.GetString(reader.GetOrdinal("tannin"))
                     };
                     WineData.Add(Wine);
                 }

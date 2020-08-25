@@ -47,16 +47,18 @@ namespace WineProvider.Classes
             wineDataModelPinotNoir.Id = 0;
             wineDataModelPinotNoir.Name = "Pinot Noir";
             wineDataModelPinotNoir.Color = "Red";
-            //wineDataModelPinotNoir.Taste = new List<string>() { "Cherry", "Cranberry", "Rose", "Rhubarb" };
-            //wineDataModelPinotNoir.FoodPairing = new List<string>() { "Chicken", "Pork", "Duck", "Soft Cheese" };
+            wineDataModelPinotNoir.Fruit = "Medium-high";
+            wineDataModelPinotNoir.Body = "Full body";
+            wineDataModelPinotNoir.Tannin = "Medium-high";
             _wineDataModels.Add(wineDataModelPinotNoir);
 
             WineDataModel wineDataModelRiesling = new WineDataModel();
             wineDataModelRiesling.Id = 1;
             wineDataModelRiesling.Name = "Riesling";
             wineDataModelRiesling.Color = "White";
-            //wineDataModelRiesling.Taste = new List<string>() { "citrus", "nectarine", "floral" };
-            //wineDataModelRiesling.FoodPairing = new List<string>() { "chicken", "pork", "duck", "indian", "thai", "vietnamese" };
+            wineDataModelRiesling.Fruit = "High";
+            wineDataModelRiesling.Body = "Light body";
+            wineDataModelRiesling.Tannin = "Medium";
             _wineDataModels.Add(wineDataModelRiesling);
 
         }
