@@ -12,8 +12,6 @@ C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\Wi
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.csprojAssemblyReference.cache
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.AssemblyInfoInputs.cache
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.AssemblyInfo.cs
-C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.csproj.CoreCompileInputs.cache
-C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.RazorTargetAssemblyInfo.cache
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.csproj.CopyComplete
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\staticwebassets\WineGuide.StaticWebAssets.Manifest.cache
@@ -64,3 +62,10 @@ C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\ru
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\System.Web.Cors.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\System.Web.Http.Cors.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.csproj.CoreCompileInputs.cache
+C:\Users\JYang\source\JihyunRepos\WineGuide\WineGuide\obj\Debug\netcoreapp3.1\WineGuide.MvcApplicationPartsAssemblyInfo.cache

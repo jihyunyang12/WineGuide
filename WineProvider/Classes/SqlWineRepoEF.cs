@@ -36,6 +36,11 @@ namespace WineProvider.Classes
         {
             throw new NotImplementedException();
         }
+        public void Update(WineDataModel wine)
+        {
+            throw new NotImplementedException();
+        }
+
 
     }
 }

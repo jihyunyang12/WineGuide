@@ -20,6 +20,17 @@ namespace WineProvider.Classes
             con.Close();
         }
 
+        public void Update(WineDataModel wine)
+        {
+            string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";
+            using SqlConnection con = new SqlConnection(_connectionString);
+            using var command = new SqlCommand("update winecellar set Name = '" + wine.Name + "', Color = '" + wine.Color + 
+                "', Fruit = '" + wine.Fruit + "', Body = '" + wine.Body + "', Tannin = '" + wine.Tannin + "' where ID = " + wine.Id, con);
+            con.Open();
+            DbDataReader reader = command.ExecuteReader();
+            con.Close();
+        }
+
         public void Delete(int id)
         {
             string _connectionString = "Server=localhost\\SQLEXPRESS;Database=Wine;Trusted_Connection=True;";

@@ -34,6 +34,7 @@ namespace WineGuide.Controllers
         }
 
         // GET api/<WineController>/5
+        [EnableCors("Policy1")]
         [HttpGet("{id}")]
         public WineDataModel GetWineById(int id)
         {
@@ -41,6 +42,7 @@ namespace WineGuide.Controllers
         }
 
         // POST api/<WineController>
+        [EnableCors("Policy1")]
         [HttpPost]
         public ActionResult<WineDataModel> AddWine(WineDataModel wineDataModel)
         {
@@ -48,13 +50,16 @@ namespace WineGuide.Controllers
             return CreatedAtAction(nameof(GetWineById), new { id = wineDataModel.Id }, wineDataModel);
         }
 
-        // PUT api/<WineController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // PUT api/<WineController>
+        [EnableCors("Policy1")]
+        [HttpPut]
+        public void Put(WineDataModel wineDataModel)
         {
+            wineItemsProvider.UpdateWine(wineDataModel);
         }
 
         // DELETE api/<WineController>/5
+        [EnableCors("Policy1")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

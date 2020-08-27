@@ -30,7 +30,10 @@ namespace WineProvider.Classes
         {
             throw new NotImplementedException();
         }
-
+        public void Update(WineDataModel wine)
+        {
+            throw new NotImplementedException();
+        }
         public WineDataModel Get(int id)
         {
             return _wineDataModels.Find(wine => wine.Id == id);

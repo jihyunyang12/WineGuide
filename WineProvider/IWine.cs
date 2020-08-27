@@ -10,5 +10,6 @@ namespace WineProvider
         public WineDataModel Get(int id);
         public void Add(WineDataModel wine);
         public void Delete(int id);
+        public void Update(WineDataModel wine);
     }
 }

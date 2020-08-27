@@ -35,5 +35,9 @@ namespace WineProvider
             _repository.Delete(id);
         }
 
+        public void UpdateWine(WineDataModel wine)
+        {
+            _repository.Update(wine);
+        }
     }
 }
